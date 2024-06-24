@@ -1,0 +1,64 @@
+﻿@model POS_Software.Models.DashData
+@{ ViewBag.Title = "Home Page"; }
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="widget widget-green">
+                <h4>PURCHASES</h4>
+                <p>@Model.TotalPurchases.ToString("C")</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-blue">
+                <h4>SALES</h4>
+                <p>@Model.TotalSales.ToString("C")</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-gray">
+                <h4>PROFIT</h4>
+                <p>@Model.TotalProfit.ToString("C")</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-blue">
+                <h4>SALE ORDERS</h4>
+                <p>@Model.TotalSaleOrders</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="widget widget-green">
+                <h4>PURCHASE ORDER</h4>
+                <p>@Model.TotalPurchaseOrders</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-gray">
+                <h4>PRODUCTS</h4>
+                <p>@Model.TotalProducts</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-orange">
+                <h4>SUPPLIERS</h4>
+                <p>@Model.TotalSuppliers</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget widget-red">
+                <h4>CUSTOMERS</h4>
+                <p>@Model.TotalCustomer</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="widget widget-green">
+                <h4>Stock</h4>
+                <p>@Model.TotalStock</p>
+            </div>
+        </div>
+    </div>

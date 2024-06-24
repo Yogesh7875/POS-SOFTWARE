@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Software Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('../../img/background img.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .login-box {
+            background: rgba(22, 124, 188, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+        }
+
+            .login-box h2 {
+                margin-bottom: 1rem;
+            }
+
+            .login-box label {
+                display: block;
+                margin: 0.5rem 0 0.2rem;
+                text-align: left;
+            }
+
+            .login-box input {
+                width: calc(100% - 2rem);
+                padding: 0.5rem;
+                margin-bottom: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+        .password-container {
+            position: relative;
+            margin-bottom: 1rem; /* Add margin to separate from other inputs */
+        }
+
+            .password-container input {
+                width: calc(100% - 40px); /* Adjust width for the toggle icon */
+            }
+
+            .password-container .toggle-password {
+                position: absolute;
+                right: 15px; /* Adjust as needed */
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                background-color: #fff;
+                padding: 5px;
+                border-radius: 50%;
+            }
+
+        .login-box button {
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .login-box button:hover {
+                background-color: #45a049;
+            }
+
+        .signup-link {
+            margin-top: 1rem;
+        }
+
+            .signup-link a {
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+                .signup-link a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Billing Software</h1>
+    </header>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="/Home/Login" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+                    <span class="toggle-password" style="margin-top:-10px;" onclick="togglePasswordVisibility()">👁</span></div>
+                <button type="submit">Login</button>
+            </form>
+
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Billing Software Inc.</p>
+    </footer>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+﻿@model POS_Software.Models.PurchaseViewModel
+@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Print</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        .bill-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+            header h1 {
+                margin: 0;
+                font-size: 32px;
+                color: #007BFF;
+            }
+
+            header p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+        .sales-details {
+            margin-bottom: 20px;
+        }
+
+            .sales-details h2 {
+                margin: 0 0 10px;
+                font-size: 24px;
+                color: #007BFF;
+            }
+
+        .sales-info, .customer-info {
+            margin-bottom: 20px;
+        }
+
+            .sales-info p, .customer-info p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+        .sales-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            .sales-table th, .sales-table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .sales-table th {
+                background: #f7f7f7;
+                font-weight: bold;
+            }
+
+        .total-section {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+            .total-section p {
+                margin: 5px 0;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: #fff;
+            text-align: center;
+            border: none;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function printBill() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="bill-container">
+        <button class="print-button" onclick="printBill()">Print</button>
+
+        <header>
+            <h1>Factory Outlet Satara</h1>
+            <p>Adinath Apartment Shop No |144 Ravivar peth|Chuna gali Satara 4155002</p>
+            <p>Phone:9730527250 </p>
+        </header>
+
+        <section class="sales-details">
+            <div class="customer-info">
+                <h2>Supplier Information:</h2>
+                <p>@Model.SupplierName</p>
+                <p>@Model.SupplierAddress</p>
+            </div>
+
+            <div class="sales-info">
+                <p><strong>Purchase Record Number:</strong> @Model.PurchaseId</p>
+                <p><strong>Date:</strong> @Model.PurchaseDate.ToString("dd MMMM  yyyy")</p>
+            </div>
+        </section>
+
+        <table class="sales-table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.PurchaseDetails)
+                {
+    <tr>
+        <td>@item.ProductName</td>
+        <td>@item.Quantity</td>
+        <td>@item.UnitPrice.ToString("C")</td>
+        <td>@item.TotalPrice.ToString("C")</td>
+    </tr>
+}
+            </tbody>
+        </table>
+
+        <div class="total-section">
+            <p><strong>Order Discount (%):</strong> @Model.Discount.ToString("C")</p>
+            <p><strong>Total:</strong> @Model.AmountPaid.ToString("C")</p>
+        </div>
+
+        <footer>
+            <p>Thank you for your purchase!</p>
+            <p>Technopuls Software's| Contact -96045 85794</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<POS_Software.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    h2 {
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .table td {
+            background-color: #fff;
+        }
+
+            .table td:last-child {
+                text-align: center;
+            }
+
+            .table td a {
+                margin-right: 5px;
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+                .table td a:hover {
+                    color: #23527c;
+                    text-decoration: underline;
+                }
+
+                .table td a.delete-link:hover {
+                    color: #d9534f;
+                }
+</style>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerAddress)
+        </th>
+        <th>
+            <label>Action</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerId })
+        </td>
+    </tr>
+}
+
+</table>

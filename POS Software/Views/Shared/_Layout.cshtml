@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS SOFTWARE</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #3B8DBC;
+        }
+
+            .navbar .navbar-brand,
+            .navbar .nav-link {
+                color: white;
+            }
+
+        .white-text {
+            color: white;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 56px; /* Height of the navbar */
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            background-color: #343a40;
+            padding-top: 20px;
+            z-index: 1000;
+        }
+
+            .sidebar a {
+                color: white;
+                padding: 15px;
+                display: block;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background-color: #575d63;
+                }
+
+        .submenu a {
+            color: white;
+            padding-left: 30px;
+        }
+
+            .submenu a:hover {
+                background-color: #575d63;
+            }
+
+        .content {
+            margin-top: 56px; /* Height of the navbar */
+            margin-left: 200px; /* Width of the sidebar */
+            padding: 20px;
+        }
+
+        .widget {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .widget-green {
+            background-color: #28a745;
+        }
+
+        .widget-blue {
+            background-color: #007bff;
+        }
+
+        .widget-gray {
+            background-color: #6c757d;
+        }
+
+        .widget-orange {
+            background-color: #fd7e14;
+        }
+
+        .widget-red {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand">POS Software</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Factory Outlet Satara</a>
+                </li>
+             
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="accordionSidebar">
+        <a href="/Home/Index" class="white-text">&#127968; Dashboard</a>
+        <a href="/Sales/Create" class="white-text">&#10145;New Sale</a>
+        <a href="#" data-toggle="collapse" data-target="#salesMenu" aria-expanded="true" aria-controls="salesMenu">&#128200;Sales</a>
+        <div id="salesMenu" class="collapse submenu" aria-labelledby="headingSales" data-parent="#accordionSidebar">
+            <a href="/Sales/Create" class="white-text">New Sale</a>
+            <a href="/Sales/Index" class="white-text">Sale History</a>        </div>
+        <a href="#" data-toggle="collapse" data-target="#purchasesMenu" aria-expanded="false" aria-controls="purchasesMenu">&#128722;Purchases</a>
+        <div id="purchasesMenu" class="collapse submenu" aria-labelledby="headingPurchases" data-parent="#accordionSidebar">
+            <a href="/Purchases/Create" class="white-text">New Purchase</a>
+            <a href="/Purchases/Index" class="white-text">Purchase History</a>
+        </div>
+        <a href="#" data-toggle="collapse" data-target="#productsMenu" aria-expanded="false" aria-controls="productsMenu">&#128230;Products</a>
+        <div id="productsMenu" class="collapse submenu" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
+            <a href="/Products/Create" class="white-text">New Product</a>
+            <a href="/Products/Index" class="white-text">Product List</a>
+        </div>
+        <a href="#" data-toggle="collapse" data-target="#customersMenu" aria-expanded="false" aria-controls="customersMenu">&#128100;Customers</a>
+        <div id="customersMenu" class="collapse submenu" aria-labelledby="headingCustomers" data-parent="#accordionSidebar">
+            <a href="/Customers/Create" class="white-text">New Customer</a>
+            <a href="/Customers/Index" class="white-text">Customer List</a>
+        </div>
+        <a href="#" data-toggle="collapse" data-target="#suppliersMenu" aria-expanded="false" aria-controls="suppliersMenu">&#128230;Suppliers</a>
+        <div id="suppliersMenu" class="collapse submenu" aria-labelledby="headingSuppliers" data-parent="#accordionSidebar">
+            <a href="/Suppliers/Create" class="white-text">New Supplier</a>
+            <a href="/Suppliers/Index" class="white-text">Supplier List</a>
+        </div>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $('.collapse').on('show.bs.collapse', function () {
+            $('.collapse.show').collapse('hide');
+        });
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

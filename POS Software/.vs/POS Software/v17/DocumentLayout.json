@@ -1,0 +1,231 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\models\\possoftwarecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\models\\possoftwarecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\views\\suppliers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\views\\suppliers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|c:\\users\\raska\\onedrive\\desktop\\pos\\pos software\\pos software\\pos software\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CA861D8-B932-47B9-AFDF-7A1FF081E05C}|POS Software\\POS Software.csproj|solutionrelative:pos software\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "POS Software\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Product.cs",
+              "RelativeToolTip": "POS Software\\Models\\Product.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T05:57:09.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "POS Software\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "POS Software\\Views\\Shared\\_Layout.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T10:21:07.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "POS Software\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "POS Software\\Controllers\\HomeController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T06:02:54.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\appsettings.json",
+              "RelativeDocumentMoniker": "POS Software\\appsettings.json",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\appsettings.json",
+              "RelativeToolTip": "POS Software\\appsettings.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-28T10:53:32.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PosSoftwareContext.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\PosSoftwareContext.cs",
+              "RelativeDocumentMoniker": "POS Software\\Models\\PosSoftwareContext.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\PosSoftwareContext.cs",
+              "RelativeToolTip": "POS Software\\Models\\PosSoftwareContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:48:58.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "POS Software\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "POS Software\\Models\\ErrorViewModel.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T05:08:56.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Program.cs",
+              "RelativeDocumentMoniker": "POS Software\\Program.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Program.cs",
+              "RelativeToolTip": "POS Software\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:58:01.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "POS Software\\Models\\Supplier.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Supplier.cs",
+              "RelativeToolTip": "POS Software\\Models\\Supplier.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T05:57:15.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "POS Software\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "POS Software\\Views\\Home\\Privacy.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-29T05:57:29.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "POS Software\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "POS Software\\Views\\Home\\Index.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T10:27:42.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Suppliers\\Index.cshtml",
+              "RelativeDocumentMoniker": "POS Software\\Views\\Suppliers\\Index.cshtml",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Suppliers\\Index.cshtml",
+              "RelativeToolTip": "POS Software\\Views\\Suppliers\\Index.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-28T11:06:20.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "POS Software\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Models\\Customer.cs",
+              "RelativeToolTip": "POS Software\\Models\\Customer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T05:08:29.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "POS Software\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "POS Software\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-29T05:08:16.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SuppliersController.cs",
+              "DocumentMoniker": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Controllers\\SuppliersController.cs",
+              "RelativeDocumentMoniker": "POS Software\\Controllers\\SuppliersController.cs",
+              "ToolTip": "C:\\Users\\raska\\OneDrive\\Desktop\\POS\\POS Software\\POS Software\\POS Software\\Controllers\\SuppliersController.cs",
+              "RelativeToolTip": "POS Software\\Controllers\\SuppliersController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T11:03:15.913Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

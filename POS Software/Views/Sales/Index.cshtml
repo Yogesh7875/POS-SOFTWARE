@@ -1,0 +1,130 @@
+﻿@model IEnumerable<POS_Software.Models.Sale>
+
+@{ ViewBag.Title = "Sales List"; }
+
+<style>
+    /* Content/SalesList.css */
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.2em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+        .table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .table th,
+        .table td {
+            padding: 12px 15px;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .table tbody tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+
+            .table tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        .table tbody td:last-child {
+            text-align: right;
+        }
+
+        .table th label {
+            margin-right: 10px;
+            margin-top: 5px; /* Add any specific top margin here if needed */
+        }
+
+    .btn-group .btn {
+        margin-right: 5px;
+    }
+
+        .btn-group .btn:last-child {
+            margin-right: 0;
+        }
+</style>
+
+<h2>Sales List</h2>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMode)
+            </th>
+            <th>
+                <label style="margin-left: 80px;">Action</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @item.SalesDate.ToString("dd/MM/yyyy")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerPhone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SaleId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Discount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AmountPaid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PaymentMode)
+    </td>
+    <td>
+        <div class="btn-group" role="group">
+            @Html.ActionLink("Print Bill", "BillPrint", new { id = item.SaleId }, new { @class = "btn btn-info btn-sm" })
+        </div>
+    </td>
+</tr>}
+    </tbody>
+</table>

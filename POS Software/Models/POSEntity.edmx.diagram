@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf1ba60a79b54e43bb3b16decd0e901e" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="POSDBModel.Product" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="POSDBModel.PurchaseDetail" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="POSDBModel.Purchase" PointX="0.75" PointY="1" Width="1.5" />
+        <EntityTypeShape EntityType="POSDBModel.SalesDetail" Width="1.5" PointX="6" PointY="4.75" />
+        <EntityTypeShape EntityType="POSDBModel.Supplier" Width="1.5" PointX="2.75" PointY="8.75" />
+        <AssociationConnector Association="POSDBModel.FK__PurchaseD__Produ__440B1D61" />
+        <AssociationConnector Association="POSDBModel.FK_SalesDetaProdu_3F466844" />
+        <AssociationConnector Association="POSDBModel.FK__PurchaseD__Purch__44FF419A" />
+        <EntityTypeShape EntityType="POSDBModel.Sale" Width="1.5" PointX="3.375" PointY="1" />
+        <AssociationConnector Association="POSDBModel.FK_SalesDetaSaleI_3E52440B" />
+        <EntityTypeShape EntityType="POSDBModel.Customer" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

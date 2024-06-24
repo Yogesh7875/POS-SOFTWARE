@@ -1,0 +1,194 @@
+﻿@model POS_Software.Models.Customer
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-horizontal {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        margin: 50px auto;
+        transition: box-shadow 0.3s ease;
+    }
+
+        .form-horizontal:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-horizontal h4 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+    .control-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .form-control {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #5bc0de;
+            outline: none;
+            box-shadow: 0 0 8px rgba(91, 192, 222, 0.3);
+        }
+
+    .text-danger {
+        color: #d9534f;
+    }
+
+    .btn-default {
+        background-color: #5bc0de;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-default:hover {
+            background-color: #31b0d5;
+        }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+        .form-group div {
+            padding: 0;
+        }
+
+    .col-md-offset-2 {
+        margin-left: 0;
+    }
+
+    .col-md-2, .col-md-10 {
+        padding: 0 15px;
+    }
+
+    .form-horizontal hr {
+        margin: 20px 0;
+        border: 0;
+        border-top: 1px solid #eee;
+    }
+
+    .back-to-list {
+        display: block;
+        text-align: center;
+        margin: 25px 0;
+        color: #337ab7;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+        .back-to-list:hover {
+            text-decoration: underline;
+            color: #23527c;
+        }
+
+    media (max-width: 768px) {
+        .form-horizontal
+
+    {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .form-horizontal h4 {
+        font-size: 24px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-default {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .back-to-list {
+        font-size: 16px;
+    }
+    }
+</style>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Customer</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerPhone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

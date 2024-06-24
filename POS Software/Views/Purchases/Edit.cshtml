@@ -1,0 +1,218 @@
+﻿@model POS_Software.Models.PurchaseViewModel
+
+@{
+    ViewBag.Title = "Edit Purchase Order";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        margin-top: 30px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table thead th {
+        background-color: #f1f1f1;
+    }
+
+    .btn-new-row {
+        margin-top: 10px;
+    }
+
+    .form-control, .form-select {
+        height: calc(1.5em + .75rem + 2px);
+    }
+
+    .pay-button {
+        font-size: 1.25rem;
+        padding: .75rem 1.5rem;
+    }
+
+    .product-name {
+        width: 250px;
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-center">Edit Purchase Order</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.SupplierName, "Supplier Name")
+                @Html.DropDownListFor(model => model.SupplierName, ViewBag.SupplierId as SelectList, htmlAttributes: new { @class = "form-control" })
+                <small class="form-text text-muted">Or Add New Supplier</small>
+            </div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.SupplierAddress, "Address")
+                @Html.EditorFor(model => model.SupplierAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Purchase Price</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Item Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="orderTable">
+                @for (int i = 0; i < Model.PurchaseDetails.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>
+                            @Html.DropDownListFor(m => m.PurchaseDetails[i].ProductId, new SelectList(ViewBag.Products, "Value", "Text", Model.PurchaseDetails[i].ProductId), new { @class = "form-control product-name" })
+                        </td>
+                        <td><input type="text" class="form-control" name="PurchaseDetails[@i].UnitPrice" value="@Model.PurchaseDetails[i].UnitPrice" oninput="calculateTotal(this)" /></td>
+                        <td><input type="text" class="form-control" name="PurchaseDetails[@i].Quantity" value="@Model.PurchaseDetails[i].Quantity" oninput="calculateTotal(this)" /></td>
+                        <td><input type="text" class="form-control" disabled /></td>
+                        <td><input type="text" class="form-control" name="PurchaseDetails[@i].TotalPrice" value="@Model.PurchaseDetails[i].TotalPrice" /></td>
+                        <td class="text-center"><button type="button" class="btn btn-danger" onclick="removeRow(this)">&#128465;</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary btn-new-row" onclick="addRow()">+ New Row</button>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    @Html.DropDownListFor(m => m.PaymentMode, new SelectList(new List<string> { "Cash", "UPI" }), new { @class = "form-control", id = "paymentMethod" })
+                </div>
+                <div class="form-group">
+                    <label for="privateRemarks">Cheque No./Online payment No./etc...</label>
+                </div>
+                <div class="form-group">
+                    <label for="remarks">These remarks will print on bill</label>
+                </div>
+                <div class="form-group">
+                    <label for="privateRemarks">These remarks will not print on bill</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Order Total (0 pack, 0 piece)</td>
+                        <td class="text-left" id="orderTotal">0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Order Discount (%)</td>
+                        <td class="text-left"><input type="number" step="0.01" value="@Model.Discount" name="Discount" oninput="updateGrandTotal()"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Total</b></td>
+                        <td class="text-left" id="grandTotal"><b>0.00</b></td>
+                    </tr>
+                    <tr>
+                        <td>Paid</td>
+                        <td class="text-left"><input type="number" step="0.01" value="@Model.AmountPaid" name="AmountPaid"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block pay-button" id="payButton">Pay 0.00</button>
+    }
+</div>
+
+<script>
+    var productOptions = @Html.Raw(Json.Encode((SelectList)ViewBag.Products));
+
+    function addRow() {
+        const table = document.getElementById('orderTable');
+        const rowCount = table.rows.length;
+        const row = table.insertRow(rowCount);
+        let productOptionsHtml = '';
+
+        for (let key in productOptions) {
+            productOptionsHtml += `<option value="${productOptions[key].Value}">${productOptions[key].Text}</option>`;
+        }
+
+        row.innerHTML = `
+            <tr>
+                <td>${rowCount + 1}</td>
+                <td>
+                    <select class="form-control product-name" name="PurchaseDetails[${rowCount}].ProductId">
+                        ${productOptionsHtml}
+                    </select>
+                </td>
+                <td><input type="text" class="form-control" name="PurchaseDetails[${rowCount}].UnitPrice" value="0.00" oninput="calculateTotal(this)" /></td>
+                <td><input type="text" class="form-control" name="PurchaseDetails[${rowCount}].Quantity" value="0" oninput="calculateTotal(this)" /></td>
+                <td><input type="text" class="form-control" disabled /></td>
+                <td><input type="text" class="form-control" name="PurchaseDetails[${rowCount}].TotalPrice" value="0.00" /></td>
+                <td class="text-center"><button type="button" class="btn btn-danger" onclick="removeRow(this)">&#128465;</button></td>
+            </tr>
+        `;
+        calculateOverallTotal();
+    }
+
+    function removeRow(button) {
+        const row = button.closest('tr');
+        row.remove();
+        updateRowNumbers();
+        calculateOverallTotal();
+    }
+
+    function updateRowNumbers() {
+        const rows = document.querySelectorAll('#orderTable tr');
+        rows.forEach((row, index) => {
+            row.cells[0].innerText = index + 1;
+        });
+    }
+
+    function calculateTotal(input) {
+        const row = input.closest('tr');
+        const unitPrice = parseFloat(row.cells[2].querySelector('input').value) || 0;
+        const quantity = parseFloat(row.cells[3].querySelector('input').value) || 0;
+        const total = unitPrice * quantity;
+        row.cells[5].querySelector('input').value = total.toFixed(2);
+        calculateOverallTotal();
+    }
+
+    function calculateOverallTotal() {
+        const rows = document.querySelectorAll('#orderTable tr');
+        let total = 0;
+        rows.forEach(row => {
+            const itemTotal = parseFloat(row.cells[5].querySelector('input').value) || 0;
+            total += itemTotal;
+        });
+        document.getElementById('orderTotal').innerText = total.toFixed(2);
+        updateGrandTotal();
+    }
+
+    function updateGrandTotal() {
+        const orderTotal = parseFloat(document.getElementById('orderTotal').innerText) || 0;
+        const discountPercent = parseFloat(document.querySelector('input[name="Discount"]').value) || 0;
+        const discountAmount = orderTotal * (discountPercent / 100);
+        const grandTotal = orderTotal - discountAmount;
+        document.getElementById('grandTotal').innerText = grandTotal.toFixed(2);
+
+        // Automatically set the "Paid" input to the "Grand Total"
+        document.querySelector('input[name="AmountPaid"]').value = grandTotal.toFixed(2);
+
+        document.getElementById('payButton').innerText = `Pay ${grandTotal.toFixed(2)}`;
+    }
+
+    // Initial calculation when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        calculateOverallTotal();
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+

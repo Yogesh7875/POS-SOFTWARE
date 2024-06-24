@@ -1,0 +1,132 @@
+﻿@model IEnumerable<POS_Software.Models.Purchase>
+
+@{
+    ViewBag.Title = "Purchases List";
+}
+
+<style>
+    /* Content/PurchasesList.css */
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.2em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+        .table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .table th,
+        .table td {
+            padding: 12px 15px;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .table tbody tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+
+            .table tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        .table tbody td:last-child {
+            text-align: right;
+        }
+
+        .table th label {
+            margin-right: 10px;
+            margin-top: 5px; /* Add any specific top margin here if needed */
+        }
+
+    .btn-group .btn {
+        margin-right: 5px;
+    }
+
+        .btn-group .btn:last-child {
+            margin-right: 0;
+        }
+</style>
+
+<h2>Purchases List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PurchaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SupplierAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PurchaseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PaymentMode)
+            </th>
+            <th>
+                <label style="margin-left: 40px;">Action</label>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.PurchaseDate.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMode)
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PurchaseId }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Print Bill", "PurchaseBill", new { id = item.PurchaseId }, new { @class = "btn btn-info btn-sm" })
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
